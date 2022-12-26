@@ -1,14 +1,28 @@
 <template>
-  <q-card class="bg-dark" flat>
-    <img style="max-width: 800px;" src="../assets/images/pokemons.png" alt=""/>
-    <q-card-section class="text-center text-h1 text-weight-bolder text-yellow">
-      quasar pokedex
-    </q-card-section>
-    <q-card-actions align="around">
-      <q-btn to="/novos-pokemons" label="Novos Pokemos" size="xl" class="bg-white" color="white" text-color="red"/>
-      <q-btn label="Minha Pokedex" size="xl" class="bg-white" color="white" text-color="red" @click="irPara"/>
-    </q-card-actions>
-  </q-card>
+    <q-card flat class="row justify-center flat" style="background-color: #121212">
+        <img style="padding: 10px; max-width: 800px;" src="../assets/images/pokemons.png" alt=""/>
+        <q-card-section class="text-h1 text-yellow text-weight-bolder text-center col-12 q-mb-xl">
+            quasar pokedex
+        </q-card-section>
+        <q-btn 
+            class="col-4 q-ma-md text-weight-bolder"
+            label='Novos Pokemons'
+            align="center"
+            size="xl"
+            color="white"
+            text-color="red"
+            @click="toPokemons()"
+        />
+        <q-btn 
+            class="col-4 q-ma-md text-weight-bolder"
+            label='Minha Pokedex'
+            align="center"
+            size="xl"
+            color="white"
+            text-color="red"
+            @click="toPokedex()"
+        />
+    </q-card>
 </template>
 
 <script>
@@ -21,8 +35,11 @@ export default {
     }
   },
   methods: {
-    irPara() {
+    toPokedex() {
       this.$router.push('/minha-pokedex')
+    },
+    toPokemons() {
+      this.$router.push('/novos-pokemons')
     }
   }
 }
