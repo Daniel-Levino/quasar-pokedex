@@ -1,10 +1,20 @@
 
 const routes = [
+  
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: 'minha-pokedex', component: () => import('pages/myPokedex.vue') }
+    ]
+  },
+
+  {
+    path: '/novos-pokemons',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/newPokemons.vue') }
     ]
   },
 
